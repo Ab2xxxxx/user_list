@@ -49,7 +49,7 @@ class _UserListScreenState extends State<UserListScreen> {
             },
           ),
           IconButton(
-            icon: Icon(Provider.of<ThemeProvider>(context).isDarkMode ? Icons.brightness_7 : Icons.brightness_2),
+            icon: Icon(Provider.of<ThemeProvider>(context).isDarkMode ? Icons.wb_sunny : Icons.brightness_2),
             onPressed: () {
               Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
             },
@@ -76,6 +76,8 @@ class _UserListScreenState extends State<UserListScreen> {
                     return ListTile(
                       title: Text(user.name),
                       subtitle: Text(user.email),
+                      leading: Icon(Icons.person),
+                      trailing: Icon(Icons.arrow_forward_ios),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
